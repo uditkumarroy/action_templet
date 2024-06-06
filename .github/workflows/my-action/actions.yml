@@ -1,0 +1,21 @@
+# .github/workflows/my-action/actions.yml
+name: My Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      myInput:
+        description: 'An input parameter'
+        required: true
+        default: 'default value'
+        type: string
+
+jobs:
+  myJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run a script
+        run: echo "Hello, ${{ inputs.myInput }}!"
