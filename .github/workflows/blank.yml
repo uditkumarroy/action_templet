@@ -1,13 +1,15 @@
-name: Reusable Steps
+name: My Action
 
-on: []
+on: [workflow_call]
 
 jobs:
-  reusable-steps-job:
+  my_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Step 1
-        run: echo "Performing reusable step 1"
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Step 2
-        run: echo "Performing reusable step 2"
+      - name: Run a sample action
+        run: echo "Hello from reusable workflow!"
+
+
