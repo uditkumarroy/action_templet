@@ -11,5 +11,3 @@ jobs:
 
       - name: Run a sample action
         run: echo "Hello from reusable workflow!"
-
-
